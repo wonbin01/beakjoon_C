@@ -50,7 +50,10 @@ int bfs(int **tomato, int time, int n, int m)
             {
                 int nx=cx+direction[i][0];
                 int ny=cy+direction[i][1];
-                if(nx>=0&&nx<n&&ny>=0&&ny<m&&)
+                if(nx>=0&&nx<n&&ny>=0&&ny<m&&tomato[nx][ny]==0)
+                {
+                    
+                }
             }
         }
     }
