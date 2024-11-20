@@ -8,6 +8,7 @@ typedef struct Element
     struct Element *next;
 }Element;
 void bfs(int n,int **turn,Element **light,int *count,int **visited);
+void initializevisied(int n,int **visited);
 int main(void)
 {
     int n,m;
@@ -63,20 +64,19 @@ int main(void)
         }
     }
     turn[0][0]=1;
-    bfs(n,turn,light,&count,visited); // 첫번째, bfs 실행
-    int second=0;
-    for(int i=0;i<n;i++)
+    visited[0][0]=1;
+    for(int i=0;i<n*n;i++)
     {
-        for(int j=0;j<n;j++)
+        bfs(n,turn,light,&count,visited);
+        int update=count;
+        initializevisied(n,visited);
+        bfs(n,turn,light,&count,visited);
+        if(count==update)
         {
-            if(turn[i][j]==1&&visited[i][j]==0) //켜져있는데 ,방문되지 않은경우
-            {
-                
-            }
+            printf("%d\n",count);
+            break;
         }
     }
-    bfs(n,turn,light,&second,visited);
-    printf("%d\n",count+second);
     return 0;
 }
 void bfs(int n,int **turn,Element **light,int *count,int **visited)
@@ -115,4 +115,15 @@ void bfs(int n,int **turn,Element **light,int *count,int **visited)
             }
         }
     }
+}
+void initializevisied(int n,int **visited)
+{
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<n;j++)
+        {
+            visited[i][j]=0;
+        }
+    }
+    visited[0][0]=1;
 }
