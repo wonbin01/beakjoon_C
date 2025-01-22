@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/wonbin/Desktop/.vscode/C/c언어",
-      "program": "c:/Users/wonbin/Desktop/.vscode/C/c언어/build/Debug/outDebug",
+      "cwd": "c:/Users/정원빈/Desktop/text/c언어",
+      "program": "c:/Users/정원빈/Desktop/text/c언어/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
